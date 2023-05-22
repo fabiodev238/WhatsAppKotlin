@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.whatsappkotlin.R
+import com.example.whatsappkotlin.data.local.UserHelper
 import com.example.whatsappkotlin.databinding.FragmentChatsBinding
 import com.example.whatsappkotlin.databinding.FragmentUserSelectionBinding
 
@@ -25,10 +27,18 @@ class UserSelectionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding=  FragmentUserSelectionBinding.inflate(inflater, container, false)
+        _binding = FragmentUserSelectionBinding.inflate(inflater, container, false)
 
+        setupRecyclerView()
         return binding.root
     }
 
-
+    private fun setupRecyclerView() {
+        binding.userList.apply {
+            adapter = userListAdapter
+            layoutManager = GridLayoutManager(requireContext(),2, GridLayoutManager.VERTICAL,false)
+        }
+        userListAdapter.submitList(UserHelper.userslist)
+    }
+//26
 }
