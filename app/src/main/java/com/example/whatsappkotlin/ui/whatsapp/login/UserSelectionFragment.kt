@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.whatsappkotlin.R
 import com.example.whatsappkotlin.data.local.UserHelper
@@ -20,7 +21,9 @@ class UserSelectionFragment : Fragment() {
         get() = _binding!!
 
     private val userListAdapter = UserListAdapter {
-        Toast.makeText(requireContext(), it.name, Toast.LENGTH_SHORT).show()
+
+        val action = UserSelectionFragmentDirections.actionUserSelectionFragmentToDashboardFragment(userId = it.id)
+        findNavController().navigate(action)
     }
 
     override fun onCreateView(
