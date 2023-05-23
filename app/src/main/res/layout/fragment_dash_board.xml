@@ -13,15 +13,12 @@
         android:id="@+id/dashboardTabLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:elevation="1dp"
-        android:text="@string/hello_blank_fragment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:tabBackground="@color/teal_green"
-        app:tabIndicator="@color/white"
         app:tabTextColor="@color/white"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:tabIndicatorColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/dashboardViewPager"
