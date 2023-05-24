@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/layout/fragment_dash_board.xml" value="0.12993920972644377" />
         <entry key="app/src/main/res/layout/fragment_social.xml" value="0.23867753623188406" />
         <entry key="app/src/main/res/layout/fragment_user_selection.xml" value="0.21543792724609376" />
+        <entry key="app/src/main/res/layout/item_chat.xml" value="0.2171875" />
         <entry key="app/src/main/res/layout/item_user.xml" value="0.25" />
       </map>
     </option>
