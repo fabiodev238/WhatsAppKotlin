@@ -7,5 +7,7 @@
     <string name="calls">Llamadas</string>
     <string name="chats">Chats</string>
     <string name="social">Social</string>
+    <string name="empty_chats">No tienes chats para mostrar</string>
+    <string name="see_the_conversation">espacio para el chat</string>
 
 </resources>

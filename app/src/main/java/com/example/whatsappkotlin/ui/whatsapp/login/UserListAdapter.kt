@@ -8,9 +8,7 @@ import com.example.whatsappkotlin.databinding.ItemUserBinding
 import com.example.whatsappkotlin.domain.model.User
 import com.example.whatsappkotlin.ui.whatsapp.chats.common.BaseListViewHolder
 
-class UserListAdapter(
-
-    private val onUserClick: (User) -> Unit, ) : ListAdapter<User, BaseListViewHolder<*>>(DiffUtilCallback) {
+class UserListAdapter(private val onUserClick: (User) -> Unit, ) : ListAdapter<User, BaseListViewHolder<*>>(DiffUtilCallback) {
 
     private object DiffUtilCallback : DiffUtil.ItemCallback<User>() {
         override fun areItemsTheSame(oldItem: User, newItem: User): Boolean = oldItem.id == newItem.id

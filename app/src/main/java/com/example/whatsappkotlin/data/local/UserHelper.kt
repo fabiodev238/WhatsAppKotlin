@@ -1,6 +1,7 @@
 package com.example.whatsappkotlin.data.local
 
 import com.example.whatsappkotlin.R
+import com.example.whatsappkotlin.domain.model.Chat
 import com.example.whatsappkotlin.domain.model.User
 
 object UserHelper {
@@ -26,4 +27,28 @@ object UserHelper {
             name = "Neymar Jr"
         ),
     )
+    val chatList = listOf(
+        Chat(
+            id = "1",
+            userImage = R.drawable.asset_cr7,
+            userName = "Cristiano Ronaldo"
+        ),
+        Chat(
+            id = "2",
+            userImage = R.drawable.asset_lewandowski,
+            userName = "Robert Lewandowsky"
+        ),
+        Chat(
+            id = "3",
+            userImage = R.drawable.asset_messi,
+            userName = "Lionel Messi"
+        ),
+        Chat(
+            id = "4",
+            userImage = R.drawable.asset_neymar,
+            userName = "Neymar Jr"
+        ),
+    )
+
+
 }
