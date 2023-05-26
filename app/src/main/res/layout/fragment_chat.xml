@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.chat.ChatFragment"
+    android:animateLayoutChanges="true"
+    android:background="@color/white_chocolate"
+    >
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pbMessages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvEmptyMessages"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/chat__empty_messages"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chatToolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/teal_green"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="@color/white"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/chatImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="2dp"
+            tools:src="@drawable/asset_cr7"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            app:layout_constraintTop_toTopOf="@id/backButton"
+            app:layout_constraintBottom_toBottomOf="@id/backButton"
+            app:layout_constraintStart_toEndOf="@id/backButton"/>
+
+        <TextView
+            android:id="@+id/chatName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            tools:text="Cristiano Ronaldo"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/chatImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/chatImage"
+            app:layout_constraintBottom_toTopOf="@id/chatStatus"/>
+
+        <TextView
+            android:id="@+id/chatStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/online"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/chatName"
+            app:layout_constraintEnd_toEndOf="@id/chatName"
+            app:layout_constraintTop_toBottomOf="@id/chatName"
+            app:layout_constraintBottom_toBottomOf="@id/chatImage"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messageList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_incoming_message"
+        tools:itemCount="26"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        app:reverseLayout="true"
+        android:paddingVertical="16dp"
+        android:clipToPadding="false"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/messageComponent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chatToolbar"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/messageComponent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/llSendMessage"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/chats"
+                android:imeOptions="actionSend"
+                android:inputType="text"
+                android:paddingVertical="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bMessagePhoto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/bMessagePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_photo"
+                android:visibility="gone"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="1"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/llSendMessage"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="4dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:background="@drawable/shape_circle_background"
+        app:layout_constraintTop_toTopOf="@id/messageComponent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/messageComponent"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/bSendMessage"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_send"
+            app:tint="@color/textOnGreen"
+            android:layout_gravity="center"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
