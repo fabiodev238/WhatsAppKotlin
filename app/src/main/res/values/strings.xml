@@ -9,5 +9,8 @@
     <string name="social">Social</string>
     <string name="empty_chats">No tienes chats para mostrar</string>
     <string name="see_the_conversation">espacio para el chat</string>
+    <string name="online">online</string>
+    <string name="chat__message_hint">chat</string>
+    <string name="chat__empty_messages">no hay mensajes para mostrar</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.example.whatsappkotlin.ui.whatsapp.dashboard
+package com.example.whatsappkotlin.ui.dashboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,9 @@ import androidx.navigation.fragment.navArgs
 import com.example.whatsappkotlin.R
 import com.example.whatsappkotlin.databinding.FragmentDashBoardBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class DashBoardFragment : Fragment() {
 
     private var _binding: FragmentDashBoardBinding? = null
@@ -18,6 +19,7 @@ class DashBoardFragment : Fragment() {
         get() = _binding!!
 
    // private val dashboardPagerAdapter = DashboardPagerAdapter
+
     private val args: DashBoardFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -33,7 +35,7 @@ class DashBoardFragment : Fragment() {
 
     private fun setupViewPager() {
         binding.dashboardViewPager.apply {
-            adapter = DashboardPagerAdapter(this@DashBoardFragment)
+            adapter = DashboardPagerAdapter(this@DashBoardFragment, userId = args.userId)
         }
         TabLayoutMediator(binding.dashboardTabLayout, binding.dashboardViewPager) { tab, position ->
             tab.text = when (position) {

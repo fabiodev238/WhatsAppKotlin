@@ -1,12 +1,10 @@
-package com.example.whatsappkotlin.ui.whatsapp.social
+package com.example.whatsappkotlin.ui.social
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.whatsappkotlin.R
-import com.example.whatsappkotlin.databinding.FragmentCallsBinding
 import com.example.whatsappkotlin.databinding.FragmentSocialBinding
 
 

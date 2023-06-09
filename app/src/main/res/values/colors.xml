@@ -4,7 +4,13 @@
     <color name="teal_green_dark">#FF075E54</color>
     <color name="light_green">#FF25D366</color>
     <color name="blue">#FF34B7F1</color>
+    <color name="message_green">#FFc2d3ab</color>
     <color name="white_chocolate">#FFECE5DD</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="textOnGreen">#F1FFFC</color>
+    <color name="textDate">#DBF0EC</color>
+    <color name="textDateLight">#A3A3A3</color>
+    <color name="textOnLight">#303130</color>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.whatsappkotlin.ui.whatsapp.chats.common
+package com.example.whatsappkotlin.ui.chats.common
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

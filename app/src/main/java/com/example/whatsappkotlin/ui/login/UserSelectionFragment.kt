@@ -1,16 +1,13 @@
-package com.example.whatsappkotlin.ui.whatsapp.login
+package com.example.whatsappkotlin.ui.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.whatsappkotlin.R
 import com.example.whatsappkotlin.data.local.UserHelper
-import com.example.whatsappkotlin.databinding.FragmentChatsBinding
 import com.example.whatsappkotlin.databinding.FragmentUserSelectionBinding
 
 

@@ -1,4 +1,4 @@
-package com.example.whatsappkotlin.ui.whatsapp.chats
+package com.example.whatsappkotlin.ui.chats
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.example.whatsappkotlin.databinding.ItemChatBinding
 
 import com.example.whatsappkotlin.domain.model.Chat
 
-import com.example.whatsappkotlin.ui.whatsapp.chats.common.BaseListViewHolder
+import com.example.whatsappkotlin.ui.chats.common.BaseListViewHolder
 
 class ChatListAdapter(private val onChatClick: (Chat) -> Unit, ) : ListAdapter<Chat, BaseListViewHolder<*>>(DiffUtilCallback) {
 
@@ -36,13 +36,15 @@ class ChatListAdapter(private val onChatClick: (Chat) -> Unit, ) : ListAdapter<C
         BaseListViewHolder<Chat>(binding.root) {
 
         override fun bind(item: Chat, position: Int) = with(binding) {
-            chatName.text = item.userName
+            chatName.text = item.userTwo
             chatImage.setImageResource(item.userImage)
 
 
             chatParent.setOnClickListener { onChatClick.invoke(item) }
         }
     }
+
+
 
 
 

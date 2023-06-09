@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/userSelectionFragment"
-        android:name="com.example.whatsappkotlin.ui.whatsapp.login.UserSelectionFragment"
+        android:name="com.example.whatsappkotlin.ui.login.UserSelectionFragment"
         android:label="fragment_user_selection"
         tools:layout="@layout/fragment_user_selection">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.example.whatsappkotlin.ui.whatsapp.dashboard.DashBoardFragment"
+        android:name="com.example.whatsappkotlin.ui.dashboard.DashBoardFragment"
         android:label="fragment_dash_board"
         tools:layout="@layout/fragment_dash_board">
 
@@ -25,5 +25,31 @@
             android:name="userId"
             app:argType="string"
             app:nullable="false" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
     </fragment>
-</navigation>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.whatsappkotlin.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+    <argument
+        android:name="userId"
+        app:argType="string"
+        app:nullable="false" />
+
+    <argument
+        android:name="chatId"
+        app:argType="string"
+        app:nullable="false" />
+
+    <argument
+        android:name="userToTextId"
+        app:argType="string"
+        app:nullable="false" />
+
+    </fragment>
+
+    </navigation>

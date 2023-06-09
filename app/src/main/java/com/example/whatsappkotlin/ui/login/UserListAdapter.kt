@@ -1,4 +1,4 @@
-package com.example.whatsappkotlin.ui.whatsapp.login
+package com.example.whatsappkotlin.ui.login
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.whatsappkotlin.databinding.ItemUserBinding
 import com.example.whatsappkotlin.domain.model.User
-import com.example.whatsappkotlin.ui.whatsapp.chats.common.BaseListViewHolder
+import com.example.whatsappkotlin.ui.chats.common.BaseListViewHolder
 
 class UserListAdapter(private val onUserClick: (User) -> Unit, ) : ListAdapter<User, BaseListViewHolder<*>>(DiffUtilCallback) {
 
