@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.whatsappkotlin"
-        minSdk 21
+        minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -51,10 +51,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    // Navigation Component
-   // implementation "androidx.navigation:navigation-fragment-ktx:2.5.2"
-  //  implementation "androidx.navigation:navigation-ui-ktx:2.5.2"
 
+    //Crypto
+    implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha03'
+    
+    //Navigation Component
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
 
@@ -86,16 +87,12 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime:2.5.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
 
-    // Firebase Firestore
- //   implementation 'com.google.firebase:firebase-firestore:24.2.2'
-   //  Firebase Storage KTX
- //   implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
 
-   implementation platform('com.google.firebase:firebase-bom:31.3.0')
+    implementation platform('com.google.firebase:firebase-bom:31.3.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-storage-ktx:19.2.1'
     implementation 'com.google.firebase:firebase-firestore-ktx:22.0.1'
-   // implementation 'com.google.firebase:firebase-auth-ktx:21.3.0'
+    //  implementation 'com.google.firebase:firebase-firestore-ktx:24.6.1'
 
 
     // Firebase Coroutines

@@ -18,7 +18,7 @@ class DashBoardFragment : Fragment() {
     private val binding: FragmentDashBoardBinding
         get() = _binding!!
 
-   // private val dashboardPagerAdapter = DashboardPagerAdapter
+
 
     private val args: DashBoardFragmentArgs by navArgs()
 

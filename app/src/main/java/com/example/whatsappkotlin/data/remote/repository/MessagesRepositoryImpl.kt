@@ -10,7 +10,7 @@ import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 class MessagesRepositoryImpl @Inject constructor (
-    private val firebaseFirestore :FirebaseFirestore
+    private val firebaseFirestore : FirebaseFirestore
         ): MessagesRepository {
 
     override suspend fun sendMessage( message:Message): Resource<Unit> {
@@ -34,7 +34,7 @@ class MessagesRepositoryImpl @Inject constructor (
     }
 
 
-   // override suspend fun fetchMessagesByChat(chatId: String): Resource<List<Message>> {
+    // override suspend fun fetchMessagesByChat(chatId: String): Resource<List<Message>> {
 
    // } 19:50 ya podemos mandar mensajes 5<<<
 

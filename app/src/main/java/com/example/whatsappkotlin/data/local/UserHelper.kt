@@ -13,14 +13,15 @@ object UserHelper {
         ),
         User(
             id = "2",
-            image = R.drawable.asset_lewandowski,
-            name = "Robert Lewandowsky"
-        ),
-        User(
-            id = "3",
             image = R.drawable.asset_messi,
             name = "Lionel Messi"
         ),
+        User(
+            id = "3",
+            image = R.drawable.asset_lewandowski,
+            name = "Robert Lewandowsky"
+        ),
+
         User(
             id = "4",
             image = R.drawable.asset_neymar,
@@ -29,14 +30,6 @@ object UserHelper {
     )
     val cristianoChatList = listOf(
         Chat(
-            id = "11",
-            userImage = R.drawable.asset_lewandowski,
-            userOne = "Cristiano Ronaldo",
-            userTwo = "Robert Lewandowski",
-            userOneId = "1",
-            userTwoId = "3"
-        ),
-        Chat(
             id = "22",
             userImage = R.drawable.asset_messi,
             userOne = "Cristiano Ronaldo",
@@ -44,6 +37,15 @@ object UserHelper {
             userOneId = "1",
             userTwoId = "2"
         ),
+        Chat(
+            id = "11",
+            userImage = R.drawable.asset_lewandowski,
+            userOne = "Cristiano Ronaldo",
+            userTwo = "Robert Lewandowski",
+            userOneId = "1",
+            userTwoId = "3"
+        ),
+
         Chat(
             id = "33",
             userImage = R.drawable.asset_neymar,

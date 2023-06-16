@@ -10,8 +10,9 @@
         <entry key="app/src/main/res/drawable/shape_incoming_message_start.xml" value="0.1425" />
         <entry key="app/src/main/res/drawable/shape_outgoing_message_middle.xml" value="0.1425" />
         <entry key="app/src/main/res/drawable/shape_outgoing_message_start.xml" value="0.1425" />
+        <entry key="app/src/main/res/layout-v23/fragment_chat.xml" value="0.1604415893554687" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17798913043478262" />
-        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.25344543457031254" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.2778625954198473" />
         <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.21693840579710144" />
         <entry key="app/src/main/res/layout/fragment_dash_board.xml" value="0.12993920972644377" />
         <entry key="app/src/main/res/layout/fragment_social.xml" value="0.23867753623188406" />

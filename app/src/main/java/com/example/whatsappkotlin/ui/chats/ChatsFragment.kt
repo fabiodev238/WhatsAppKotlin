@@ -27,7 +27,7 @@ class ChatsFragment() : Fragment() {
 private val chatListAdapter by lazy {
 
     ChatListAdapter {
-        val action =  com.example.whatsappkotlin.ui.dashboard.DashBoardFragmentDirections.actionDashboardFragmentToChatFragment(
+        val action =  DashBoardFragmentDirections.actionDashboardFragmentToChatFragment(
             chatId = it.id,
             userId = arguments?.getString("userId") ?: throw Exception("Invalid user id"),
             userToTextId = it.userTwoId
@@ -61,6 +61,7 @@ private val chatListAdapter by lazy {
     }
 
     private fun handleChatList() {
+
         val chatList = when(arguments?.getString("userId")?: throw Exception("Invalid user id")) {
             "1" -> UserHelper.cristianoChatList
             "2" -> UserHelper.messiChatList

@@ -1,8 +1,10 @@
 package com.example.whatsappkotlin.di
 
 
+import com.example.whatsappkotlin.data.local.repository.UserRepositoryImpl
 import com.example.whatsappkotlin.data.remote.repository.MessagesRepositoryImpl
 import com.example.whatsappkotlin.domain.repository.MessagesRepository
+import com.example.whatsappkotlin.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -17,12 +19,7 @@ abstract class RepositoryModule {
         messagesRepository: MessagesRepositoryImpl
     ): MessagesRepository
 
-/*
     @Binds
-    abstract fun bindUserRepository(
-        userRepository: UserRepositoryImpl
-    ): UserRepository
-
- */
+    abstract fun bindUserRepository(userRepository:UserRepositoryImpl):UserRepository
 
 }

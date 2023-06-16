@@ -15,6 +15,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.whatsappkotlin.data.local.UserHelper
 import com.example.whatsappkotlin.databinding.FragmentChatBinding
+import com.example.whatsappkotlin.domain.ext.hideKeyboard
 import com.example.whatsappkotlin.domain.model.Message
 import com.example.whatsappkotlin.ui.chats.ChatsFragment
 import com.example.whatsappkotlin.util.Resource
@@ -30,10 +31,10 @@ class ChatFragment : Fragment() {
     private val binding: FragmentChatBinding
         get() = _binding!!
 
-    private val args = ChatFragmentArgs by navArgs()
-
-
+    private val args : ChatFragmentArgs by navArgs()
     private val viewModel: ChatViewModel by viewModels()
+    
+
     private val messageListAdapter by lazy {
         MessageListAdapter(args.userId)
     }
@@ -61,6 +62,7 @@ class ChatFragment : Fragment() {
         setupClickListeners() //back button
         setupUserInformation()
         setupMessageListener()
+
         return binding.root
 
     }
@@ -73,15 +75,37 @@ class ChatFragment : Fragment() {
         }
     }
 
+    private fun setupClickListeners() { // no funciona  bien
+        binding.backButton.setOnClickListener { activity?.onBackPressed()
+            binding.bSendMessage.setOnClickListener { handleSendMessage() }
 
-    private fun setupClickListeners() {
-        binding.backButton.setOnClickListener {
-            activity?.onBackPressed()
-            binding.bSendMessage.setOnClickListener {
+        }
+    }
 
 
+    private fun subscribeViewModel() {
+
+        viewModel.messagesListState.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                is Resource.Success -> {
+                    handleMessages(messages = state.data)
+                }
+                is Resource.Error -> {
+                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+                }
+                is Resource.Loading -> {
+                    handleLoading(isLoading = true)
+                }
+                else -> Unit
             }
+        }
 
+        viewModel.sendMessageState.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                is Resource.Success -> clearMessage()
+                is Resource.Error -> clearMessage()
+                else -> Unit
+            }
         }
     }
 
@@ -116,6 +140,7 @@ class ChatFragment : Fragment() {
     }
 
     private fun handleSendMessage() {
+        hideKeyboard()
         viewModel.sendMessage(
             Message(
                 chatId = args.chatId,
@@ -123,36 +148,11 @@ class ChatFragment : Fragment() {
                 senderId = args.userId,
                 timestamp = Timestamp.now(),
 
-
                 )
         )
     }
 
-    private fun subscribeViewModel() {
 
-        viewModel.messagesListState.observe(viewLifecycleOwner) { state ->
-            when (state) {
-                is Resource.Success -> {
-                    handleMessages(messages = state.data)
-                }
-                is Resource.Error -> {
-                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
-                }
-                is Resource.Loading -> {
-                    handleLoading(isLoading = true)
-                }
-                else -> Unit
-            }
-        }
-
-        viewModel.sendMessageState.observe(viewLifecycleOwner) { state ->
-            when (state) {
-                is Resource.Success -> clearMessage()
-                is Resource.Error -> clearMessage()
-                else -> Unit
-            }
-        }
-    }
 
     private fun handleLoading(isLoading: Boolean) {
         with(binding) {
