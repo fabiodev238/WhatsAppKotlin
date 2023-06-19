@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.WhatsAppClone.Starting" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background, animated icon, and animation duration. -->
+        <item name="android:windowSplashScreenBackground">@color/teal_green</item>
+
+        <!-- Use windowSplashScreenAnimatedIcon to add either a drawable or an animated drawable.
+        One of these is required.-->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_whats_logo</item>
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+
+        <!-- Set the theme of the Activity that directly follows your splash screen.-->
+        <item name="postSplashScreenTheme">@style/Theme.WhatsAppClone</item>
+    </style>
+</resources>

@@ -1,6 +1,7 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.WhatsAppKotlin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.WhatsAppClone" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/teal_green</item>
         <item name="colorPrimaryVariant">@color/teal_green_dark</item>
@@ -10,7 +11,7 @@
         <item name="colorSecondaryVariant">@color/teal_green_dark</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
         <item name="actionBarStyle">@style/FlatActionBar</item>
     </style>
@@ -18,4 +19,26 @@
     <style name="FlatActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid">
         <item name="elevation">0dp</item>
     </style>
+
+    <style name="Theme.WhatsAppClone.Startingg" parent="@android:style/Theme.Light.NoTitleBar">
+        <!-- Set the splash screen background, animated icon, and animation duration. -->
+        <item name="android:windowBackground">@drawable/asset_splash_background</item>
+    </style>
+
+
+    <style name="Theme.WhatsAppClone.Starting" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background, animated icon, and animation duration. -->
+        <item name="android:windowSplashScreenBackground">@color/teal_green</item>
+
+        <!-- Use windowSplashScreenAnimatedIcon to add either a drawable or an animated drawable.
+        One of these is required.-->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_whats_logo</item>
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+
+        <!-- Set the theme of the Activity that directly follows your splash screen.-->
+        <item name="postSplashScreenTheme">@style/Theme.WhatsAppClone</item>
+    </style>
+
+
+
 </resources>
